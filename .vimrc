@@ -34,7 +34,7 @@ set fileformat=unix
 
 filetype off 
 set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
+call vundle#begin()
 Bundle 'VundleVim/Vundle.vim'
 Bundle 'The-NERD-tree'
 Bundle 'The-NERD-Commenter'
@@ -48,7 +48,12 @@ Bundle 'bufexplorer.zip'
 Bundle 'tobyS/pdv'
 Plugin 'SirVer/ultisnips'
 Plugin 'honza/vim-snippets'
+call vundle#end()
 filetype plugin indent on
+
+"配置pdv2
+let g:pdv_template_dir = $HOME ."/.vim/bundle/pdv/templates_snip"
+nnoremap <buffer> <C-p> :call pdv#DocumentWithSnip()<CR>
 
 "目录展开折叠
 map <F10> :NERDTreeToggle<CR>
@@ -74,9 +79,6 @@ nmap <F12> :set nu <CR>
 "开启PHP补全 <Ctrl+X> <Ctrl+O>
 autocmd FileType php set omnifunc=phpcomplete#CompletePHP
 
-"配置pdv2
-let g:pdv_template_dir = $HOME ."/.vim/bundle/pdv/templates_snip"
-nnoremap <buffer> <C-p> :call pdv#DocumentWithSnip()<CR>
 
 "配置UltiSnips pdv2依赖
 let g:UltiSnipsExpandTrigger="<tab>"
