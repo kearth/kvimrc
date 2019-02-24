@@ -18,8 +18,6 @@ set expandtab
 set autoindent 
 "显示256色
 set t_Co=256
-"可以使用鼠标
-"set mouse=a
 "设置文件编码
 set encoding=utf-8
 set termencoding=utf-8
@@ -29,62 +27,60 @@ set fileencodings=utf-8,gbk,latin1
 set textwidth=72
 set formatoptions+=mM
 set nocompatible
-"set paste
 set fileformat=unix
 
 filetype off 
 set rtp+=~/.vim/bundle/vundle/
 call vundle#begin()
 Bundle 'VundleVim/Vundle.vim'
+"目录
 Bundle 'The-NERD-tree'
+"注释
 Bundle 'The-NERD-Commenter'
+"powerline
 Bundle 'vim-airline/vim-airline'
 Bundle 'vim-airline/vim-airline-themes'
-Bundle 'majutsushi/tagbar'
+"多路选择
 Bundle 'terryma/vim-multiple-cursors'
+"补全
 Bundle 'neocomplcache'
+"模糊查询
 Bundle 'ctrlp.vim'
+"页面缓存
 Bundle 'bufexplorer.zip'
-Bundle 'tobyS/pdv'
-Plugin 'SirVer/ultisnips'
-Plugin 'honza/vim-snippets'
 call vundle#end()
 filetype plugin indent on
 
-"配置pdv2
-let g:pdv_template_dir = $HOME ."/.vim/bundle/pdv/templates_snip"
-nnoremap <buffer> <C-p> :call pdv#DocumentWithSnip()<CR>
+"设置行数显示
+nmap <F1> :set nonu <CR>
+nmap <F2> :set nu <CR>
 
-"目录展开折叠
+"NERDTree目录展开折叠
 map <F10> :NERDTreeToggle<CR>
 
-set rtp+=/usr/local/lib/python3.6/site-packages/powerline/bindings/vim/
-
-"启动显示状态行
-set laststatus=2
-
 "vim-airline配置
-let g:airline_theme="luna"
+let g:airline_theme="molokai"
 let g:airline_powerline_fonts=1
-let g:molokai_original = 1
-let g:rehash256 = 1
+let g:airline#extensions#tabline#enabled = 1
+nnoremap <S-N> :bn<CR>  
+nnoremap <S-P> :bp<CR>
 
-"tagbar配置
-nmap <F8> :TagbarToggle<CR>
+"neocomplcache 开启并默认第一个
+let g:neocomplcache_enable_at_startup = 1
+let g:neocomplcache_enable_auto_select = 1
 
-"设置行数显示
-nmap <F11> :set nonu <CR>
-nmap <F12> :set nu <CR>
+"解决多路选择和NeoComplete冲突
+function! Multiple_cursors_before()
+    if exists(':NeoCompleteLock')==2
+        exe 'NeoCompleteLock'
+    endif
+endfunction
 
-"开启PHP补全 <Ctrl+X> <Ctrl+O>
-autocmd FileType php set omnifunc=phpcomplete#CompletePHP
-
-
-"配置UltiSnips pdv2依赖
-let g:UltiSnipsExpandTrigger="<tab>"
-let g:UltiSnipsJumpForwardTrigger="<c-b>"
-let g:UltiSnipsJumpBackwardTrigger="<c-z>"
-let g:UltiSnipsEditSplit="vertical"
+function! Multiple_cursors_after()
+    if exists(':NeoCompleteUnlock')==2
+        exe 'NeoCompleteUnlock'
+    endif
+endfunction
 
 "解决菜单输出乱码
 language messages zh_CN.utf-8 
