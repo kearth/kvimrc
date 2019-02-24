@@ -1,6 +1,8 @@
-## kvimrc
+# kvimrc
+
 
 **一种vim配置：包括vimrc基础配置， 配色主题配置，vundle插件安装和插件基本配置**
+
 
 ## 安装（Install）
 
@@ -12,7 +14,7 @@ git clone git@github.com:kearth/kvimrc.git
 ```
 sudo cp -r color/* /usr/share/vim/vim$VIMVERSION/colors/
 ```
-此处的$VIMVERSION即为你的vim版本号。然后执行
+此处的$VIMVERSION即为你的vim版本号。再之后执行
 ```
 bash install.sh
 ```
