@@ -48,6 +48,8 @@ Bundle 'neocomplcache'
 Bundle 'ctrlp.vim'
 "页面缓存
 Bundle 'bufexplorer.zip'
+"go插件
+Bundle 'fatih/vim-go'
 call vundle#end()
 filetype plugin indent on
 
@@ -59,9 +61,10 @@ nmap <F2> :set nu <CR>
 map <F10> :NERDTreeToggle<CR>
 
 "vim-airline配置
-let g:airline_theme="molokai"
+let g:airline_theme="solarized"
 let g:airline_powerline_fonts=1
 let g:airline#extensions#tabline#enabled = 1
+let w:airline_disabled = 1
 nnoremap <S-N> :bn<CR>  
 nnoremap <S-P> :bp<CR>
 
