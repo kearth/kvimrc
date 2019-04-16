@@ -6,15 +6,16 @@
 
 ## 安装（Install）
 
-在用户目录 " ~ " （即 /home/$USERNAME 目录, $USERNAME为你的用户名）下执行
+执行
 ```
+cd ~
 git clone git@github.com:kearth/kvimrc.git
 ```
 然后进入 ~/kvimrc 目录执行
 ```
-sudo cp -r color/* /usr/share/vim/vim$VIMVERSION/colors/
+sudo cp -r color/* $(find /usr/share/vim/ -name "vim??" -type d)/colors/
 ```
-此处的$VIMVERSION即为你的vim版本号。再之后执行
+
 ```
 bash install.sh
 ```
