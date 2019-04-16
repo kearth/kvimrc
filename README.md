@@ -6,24 +6,20 @@
 
 ## 安装（Install）
 
-执行
+依次执行
 ```
 cd ~
 git clone git@github.com:kearth/kvimrc.git
-```
-然后进入 ~/kvimrc 目录执行
-```
+cd kvimrc
 sudo cp -r color/* $(find /usr/share/vim/ -name "vim??" -type d)/colors/
-```
-
-```
 bash install.sh
 ```
 完成安装。
 
 ## 卸载（Uninstall）
 
-在 ~/kvimrc 目录执行
+依次执行
 ```
+cd ~/kvimrc
 bash uninstall.sh
 ```
