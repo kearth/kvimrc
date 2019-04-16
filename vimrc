@@ -4,7 +4,7 @@ set nu
 set shortmess=atI
 "语法高亮
 syntax on
-"配色方案 /usr/share/vim/vim74/colors
+"配色方案 echo $(find /usr/share/vim/ -name "vim??" -type d)/colors/
 colorscheme gruvbox
 "背景颜色
 set background=dark
