@@ -1,3 +1,8 @@
+"设置文件编码
+set encoding=utf-8
+set termencoding=utf-8
+"打开支持的文件编码
+set fileencodings=utf-8,gbk,latin1
 "显示行号
 set nu
 "启动时隐去援助提示
@@ -18,11 +23,6 @@ set expandtab
 set autoindent 
 "显示256色
 set t_Co=256
-"设置文件编码
-set encoding=utf-8
-set termencoding=utf-8
-"打开支持的文件编码
-set fileencodings=utf-8,gbk,latin1
 "折行
 set textwidth=72
 set formatoptions+=mM
@@ -86,5 +86,3 @@ function! Multiple_cursors_after()
     endif
 endfunction
 
-"解决菜单输出乱码
-language messages zh_CN.utf-8 

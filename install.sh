@@ -10,6 +10,9 @@ if [ ! -f "$dir/vimrc" ];then
     exit
 fi
 
+#拷贝主题
+sudo cp gruvbox.vim $(find /usr/share/vim/ -name "vim??" -type d)/colors/
+
 ln -s ~/kvimrc/vimrc ~/.vimrc
 
 #下载vundle插件
