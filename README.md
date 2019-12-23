@@ -11,7 +11,6 @@
 cd ~
 git clone git@github.com:kearth/kvimrc.git
 cd kvimrc
-sudo cp -r color/* $(find /usr/share/vim/ -name "vim??" -type d)/colors/
 bash install.sh
 ```
 完成安装。
