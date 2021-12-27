@@ -30,26 +30,26 @@ set nocompatible
 set fileformat=unix
 
 filetype off 
-set rtp+=~/.vim/bundle/vundle/
+set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
-Bundle 'VundleVim/Vundle.vim'
+Plugin 'VundleVim/Vundle.vim'
 "目录
-Bundle 'The-NERD-tree'
+Plugin 'The-NERD-tree'
 "注释
-Bundle 'The-NERD-Commenter'
+Plugin 'The-NERD-Commenter'
 "powerline
-Bundle 'vim-airline/vim-airline'
-Bundle 'vim-airline/vim-airline-themes'
+Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
 "多路选择
-Bundle 'terryma/vim-multiple-cursors'
+Plugin 'terryma/vim-multiple-cursors'
 "补全
-Bundle 'neocomplcache'
+Plugin 'neocomplcache'
 "模糊查询
-Bundle 'ctrlp.vim'
+Plugin 'ctrlp.vim'
 "页面缓存
-Bundle 'bufexplorer.zip'
+Plugin 'bufexplorer.zip'
 "go插件
-Bundle 'fatih/vim-go'
+Plugin 'fatih/vim-go'
 call vundle#end()
 filetype plugin indent on
 
